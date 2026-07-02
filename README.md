@@ -23,7 +23,7 @@ My personal portfolio website showcasing my projects, skills, and experience as 
 
 ## 🚀 Live Demo
 
-**[View Portfolio](https://portfolio-sandeep923.vercel.app)**
+**[View Portfolio](https://my-portfolio-sandeep923.vercel.app)**
 
 ## 📂 Projects Featured
 
@@ -34,7 +34,7 @@ My personal portfolio website showcasing my projects, skills, and experience as 
 
 ```bash
 # Clone the repository
-git clone https://github.com/sandeep923/portfolio.git
+git clone https://github.com/sandeep923/my-portfolio.git
 cd portfolio
 
 # Install dependencies
