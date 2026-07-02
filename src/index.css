@@ -1,0 +1,289 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ================================
+   CSS VARIABLES
+================================ */
+:root {
+  --accent-primary: #4f46e5;
+  --accent-secondary: #7c3aed;
+  --accent-blue: #2563eb;
+  --accent-glow: rgba(79, 70, 229, 0.3);
+  --accent-glow-strong: rgba(79, 70, 229, 0.5);
+  --bg-card: rgba(255, 255, 255, 0.08);
+  --bg-card-hover: rgba(255, 255, 255, 0.14);
+  --border: rgba(79, 70, 229, 0.2);
+  --border-hover: rgba(79, 70, 229, 0.5);
+  --text-main: rgba(0, 0, 0, 0.80);
+  --text-muted: rgba(0, 0, 0, 0.45);
+}
+
+.dark {
+  --accent-primary: #6366f1;
+  --accent-secondary: #8b5cf6;
+  --accent-blue: #3b82f6;
+  --accent-glow: rgba(99, 102, 241, 0.25);
+  --accent-glow-strong: rgba(99, 102, 241, 0.45);
+  --bg-card: rgba(255, 255, 255, 0.04);
+  --bg-card-hover: rgba(255, 255, 255, 0.08);
+  --border: rgba(99, 102, 241, 0.15);
+  --border-hover: rgba(99, 102, 241, 0.45);
+  --text-main: rgba(255, 255, 255, 0.75);
+  --text-muted: rgba(255, 255, 255, 0.35);
+}
+
+/* ================================
+   SCROLLBAR
+================================ */
+::-webkit-scrollbar {
+  width: 3px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #4f46e5, #7c3aed);
+  border-radius: 999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #6366f1, #8b5cf6);
+}
+
+/* ================================
+   BASE
+================================ */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', 'Segoe UI', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ================================
+   SCROLLBAR HIDDEN
+================================ */
+.scrollbar-hidden::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-hidden {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* ================================
+   SKILL BG — animated gradient
+================================ */
+.skill-bg {
+  background: linear-gradient(
+    135deg,
+    #4f46e5,
+    #7c3aed,
+    #2563eb,
+    #6d28d9
+  );
+  background-size: 300% 300%;
+  animation: gradientShift 6s ease infinite;
+  box-shadow: 0 4px 20px var(--accent-glow);
+}
+
+@keyframes gradientShift {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* ================================
+   GLASS CARD
+================================ */
+.glass-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-radius: 16px;
+  transition: all 0.3s ease;
+}
+
+.glass-card:hover {
+  background: var(--bg-card-hover);
+  border-color: var(--border-hover);
+  box-shadow: 0 8px 32px var(--accent-glow);
+  transform: translateY(-3px);
+}
+
+/* ================================
+   GLOW TEXT
+================================ */
+.glow-text {
+  color: var(--accent-primary);
+  text-shadow: 0 0 30px var(--accent-glow-strong);
+}
+
+/* ================================
+   ACCENT BUTTON
+================================ */
+.accent-btn {
+  background: linear-gradient(135deg, #4f46e5, #7c3aed);
+  color: #ffffff;
+  border: none;
+  padding: 10px 24px;
+  border-radius: 12px;
+  font-weight: 600;
+  letter-spacing: 0.4px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 20px var(--accent-glow);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  text-decoration: none;
+}
+
+.accent-btn:hover {
+  background: linear-gradient(135deg, #6366f1, #8b5cf6);
+  box-shadow: 0 8px 30px var(--accent-glow-strong);
+  transform: translateY(-2px);
+}
+
+.accent-btn:active {
+  transform: translateY(0px);
+  box-shadow: 0 4px 15px var(--accent-glow);
+}
+
+/* ================================
+   OUTLINE BUTTON
+================================ */
+.outline-btn {
+  background: transparent;
+  color: var(--text-main);
+  border: 1px solid var(--border);
+  padding: 10px 24px;
+  border-radius: 12px;
+  font-weight: 600;
+  letter-spacing: 0.4px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  text-decoration: none;
+  backdrop-filter: blur(8px);
+}
+
+.outline-btn:hover {
+  border-color: var(--border-hover);
+  background: var(--bg-card);
+  box-shadow: 0 4px 20px var(--accent-glow);
+  transform: translateY(-2px);
+}
+
+/* ================================
+   SECTION DIVIDER
+================================ */
+.section-divider {
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--border),
+    transparent
+  );
+  margin: 0 auto;
+}
+
+/* ================================
+   BADGE
+================================ */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 12px;
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  backdrop-filter: blur(8px);
+  color: var(--text-main);
+}
+
+/* ================================
+   TOOLTIP
+================================ */
+.skill-bar[data-tooltip]:hover::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  bottom: 110%;
+  left: 50%;
+  z-index: 10;
+  transform: translateX(-50%);
+  background: linear-gradient(135deg, #4f46e5, #7c3aed);
+  color: #fff;
+  padding: 5px 12px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  border-radius: 8px;
+  white-space: nowrap;
+  box-shadow: 0 4px 16px var(--accent-glow);
+}
+
+/* ================================
+   LINK ANIMATION (Navbar)
+================================ */
+.LinkAnimation {
+  position: relative;
+  padding-bottom: 2px;
+}
+
+.LinkAnimation::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background: var(--accent-primary);
+  border-radius: 999px;
+  transition: width 0.3s ease;
+}
+
+.LinkAnimation:hover::after,
+.LinkAnimation.active::after {
+  width: 100%;
+}
+
+/* ================================
+   SELECTION COLOR
+================================ */
+::selection {
+  background: rgba(99, 102, 241, 0.3);
+  color: inherit;
+}
+
+/* ================================
+   FADE IN ANIMATION
+================================ */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in-up {
+  animation: fadeInUp 0.6s ease forwards;
+}

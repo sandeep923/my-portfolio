@@ -1,0 +1,11 @@
+import Navbar from "./Header/Navbar";
+import Home from "./Home";
+import axios from "../utils/axios";
+import Skill from "./Skill";
+import Projects from "./Projects";
+import Card from "./Card";
+import Heading from "./Heading";
+import Contact from "./Contact";
+import Footer from "./Footer";
+import Loading from "./Loader/Loading";
+export { Navbar, Home, axios, Skill, Projects, Card, Heading, Contact, Footer, Loading  };
