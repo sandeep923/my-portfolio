@@ -39,7 +39,7 @@ const Navbar = () => {
 
         <NavLink to="/" className="w-8 h-8 flex items-center justify-center">
           <img
-            src={ "/website/favicon.ico"}
+            src={"/website/favicon.ico"}
             alt="Logo"
             onError={(e) => {
               e.target.onerror = null;
@@ -61,8 +61,8 @@ const Navbar = () => {
           ))}
           <a
 
-            href="/website/Sandeep_Kumar_Gupta_CV_latest.pdf"
-            target="_blank"
+            href="/website/Sandeep_Kumar_Gupta_CV_Updated.pdf"
+             target="_blank"
             rel="noopener noreferrer"
             className="LinkAnimation capitalize font-medium text-sm dark:after:bg-white text-zinc-800 dark:text-white"
           >
